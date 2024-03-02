@@ -1,0 +1,10 @@
+﻿<Configuration>
+  <Add OfficeClientEdition="32" Channel="Current" MigrateArch="true" AllowCdnFallback="true">
+    <Product ID="ProjectPro2019Retail">
+      <Language ID="MatchOS" Fallback="en-us" />
+    </Product>
+  </Add>
+  <Display AcceptEULA="True" />
+  <Property Name="ForceAppShutdown" Value="True" />
+  <RemoveMSI />
+</Configuration>
