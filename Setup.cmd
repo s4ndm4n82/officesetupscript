@@ -6,7 +6,7 @@
 @setlocal enabledelayedexpansion
 set "dir=%~dp0"
 cd /d "%~dp0"
-mode con cols=70 lines=30
+mode con cols=70 lines=22
 color 02
 title Microsoft O365 And Office Installation Script
 
@@ -74,6 +74,9 @@ echo           _____________________________________________
 echo                      [x] Exit the script.
 echo.
 echo ______________________________________________________________________
+echo.
+echo.
+echo.
 echo.
 choice /C:12x /N /M ".                      Enter your choice:"
 goto :choice_%errorlevel%
@@ -145,6 +148,7 @@ echo                      [x] Go to main menu.
 echo.
 echo ______________________________________________________________________
 echo.
+echo.
 choice /C:1234x /N /M ".                     Enter your choice:"
 goto :choice2016_%errorlevel%
 
@@ -161,7 +165,7 @@ goto :cmd2016_x64_visio
 goto :activate
 
 :choice2016_5
-exit
+goto :x64
 
 :default
 call :banner
@@ -181,6 +185,7 @@ echo                      [x] Got to main menu.
 echo.
 echo ______________________________________________________________________
 echo.
+echo.
 choice /C:1234x /N /M ".                     Enter your choice:"
 goto :choice2019_%errorlevel%
 
@@ -197,7 +202,7 @@ goto :cmd2019_x64_visio
 goto :activate
 
 :choice2019_5
-exit
+goto :x64
 
 :default
 call :banner
@@ -217,6 +222,7 @@ echo                      [x] Go to main menu.
 echo.
 echo ______________________________________________________________________
 echo.
+echo.
 choice /C:1234x /N /M ".                     Enter your choice:"
 goto :choice2021_%errorlevel%
 
@@ -233,7 +239,7 @@ goto :cmd2021_x64_visio
 goto :activate
 
 :choice2021_5
-exit
+goto :x64
 
 :default
 call :banner
@@ -446,6 +452,7 @@ echo                      [x] Got to main menu.
 echo.
 echo ______________________________________________________________________
 echo.
+echo.
 choice /C:1234x /N /M ".                      Enter your choice:"
 goto :choice2016_%errorlevel%
 
@@ -462,7 +469,7 @@ goto :cmd2016_x32_visio
 goto :activate
 
 :choice2016_5
-exit
+goto :x32
 
 :default
 call :banner
@@ -482,6 +489,7 @@ echo                      [x] Got to main menu.
 echo.
 echo ______________________________________________________________________
 echo.
+echo.
 choice /C:1234x /N /M ".                      Enter your choice:"
 goto :choice2019_%Choice2019%
 
@@ -498,7 +506,7 @@ goto :cmd2019_x32_visio
 goto :activate
 
 :choice2019_5
-exit
+goto :x32
 
 :default
 call :banner
@@ -518,6 +526,7 @@ echo                      [x] Got to main menu.
 echo.
 echo ______________________________________________________________________
 echo.
+echo.
 choice /C:1234x /N /M ".                      Enter your choice:"
 goto :choice2021_%errorlevel%
 
@@ -533,9 +542,8 @@ goto :cmd2021_x32_visio
 :choice2021_4
 goto :activate
 
-:choice2021_x
-:choice2021_X
-exit
+:choice2021_5
+goto :x32
 
 :default
 call :banner
