@@ -5,6 +5,9 @@
 @echo off
 @setlocal enabledelayedexpansion
 set "dir=%~dp0"
+set "bin=!dir!bin"
+set "x64=!dir!configs\x64"
+set "x32=!dir!configs\x32"
 cd /d "%~dp0"
 mode con cols=70 lines=22
 color 02
@@ -252,13 +255,13 @@ goto :eof
 set "prod=Office Professional Plus 2016"
 call :banner
 echo                      Downloading Office ProPlus 2016 Setup...
-start /wait /b "" "!dir!setup.exe" /download "!dir!Config64pro\config_proplus2016.xml"
+start /wait /b "" "!bin!setup.exe" /download "!x64!config_proplus2016.xml"
 call :banner
 echo                      Downloading finished...
 timeout /t 10 /nobreak > nul
 call :banner
 echo                      Starting the installation...
-start /wait /b "" "!dir!setup.exe" /configure "!dir!Config64pro\config_proplus2016.xml"
+start /wait /b "" "!bin!setup.exe" /configure "!x64!config_proplus2016.xml"
 call :banner
 echo                      Installation completed...
 timeout /t 10 /nobreak > nul
@@ -269,13 +272,13 @@ goto :eof
 set "prod=Project Professional 2016"
 call :banner
 echo                      Downloading Project Professional Plus 2016 Setup...
-start /wait /b "" "!dir!setup.exe" /download "!dir!Config64pro\config_project2016.xml"
+start /wait /b "" "!bin!setup.exe" /download "!x64!config_project2016.xml"
 call :banner
 echo                      Downloading finished...
 timeout /t 10 /nobreak > nul
 call :banner
 echo                      Starting the installation...
-start /wait /b "" "!dir!setup.exe" /configure "!dir!Config64pro\config_project2016.xml"
+start /wait /b "" "!bin!setup.exe" /configure "!x64!config_project2016.xml"
 call :banner
 echo                      Installation completed...
 timeout /t 10 /nobreak > nul
@@ -286,13 +289,13 @@ goto :eof
 set "prod=Visio Professional 2016"
 call :banner
 echo                      Downloading Visio Professional Plus 2016 Setup...
-start /wait /b "" "!dir!setup.exe" /download "!dir!Config64pro\config_visiopro2016.xml"
+start /wait /b "" "!bin!setup.exe" /download "!x64!config_visiopro2016.xml"
 call :banner
 echo                      Downloading finished...
 timeout /t 10 /nobreak > nul
 call :banner
 echo                      Starting the installation...
-start /wait /b "" "!dir!setup.exe" /configure "!dir!Config64pro\config_visiopro2016.xml"
+start /wait /b "" "!bin!setup.exe" /configure "!x64!config_visiopro2016.xml"
 call :banner
 echo                      Installation completed...
 timeout /t 10 /nobreak > nul
@@ -303,13 +306,13 @@ goto :eof
 set "prod=Office Professional Plus 2019"
 call :banner
 echo                      Downloading Visio Professional Plus 2019 Setup...
-start /wait /b "" "!dir!setup.exe" /download "!dir!Config64pro\config_proplus2019.xml"
+start /wait /b "" "!bin!setup.exe" /download "!x64!config_proplus2019.xml"
 call :banner
 echo                      Downloading finished...
 timeout /t 10 /nobreak > nul
 call :banner
 echo                      Starting the installation...
-start /wait /b "" "!dir!setup.exe" /configure "!dir!Config64pro\config_proplus2019.xml"
+start /wait /b "" "!bin!setup.exe" /configure "!x64!config_proplus2019.xml"
 call :banner
 echo                      Installation completed...
 timeout /t 10 /nobreak > nul
@@ -320,13 +323,13 @@ goto :eof
 set "prod=Project Professional 2019"
 call :banner
 echo                      Downloading Project Professional Plus 2019 Setup...
-start /wait /b "" "!dir!setup.exe" /download "!dir!Config64pro\config_project2019.xml"
+start /wait /b "" "!bin!setup.exe" /download "!x64!config_project2019.xml"
 call :banner
 echo                      Downloading finished...
 timeout /t 10 /nobreak > nul
 call :banner
 echo                      Starting the installation...
-start /wait /b "" "!dir!setup.exe" /configure "!dir!Config64pro\config_project2019.xml"
+start /wait /b "" "!bin!setup.exe" /configure "!x64!config_project2019.xml"
 call :banner
 echo                      Installation completed...
 timeout /t 10 /nobreak > nul
@@ -337,13 +340,13 @@ goto :eof
 set "prod=Visio Professional 2019"
 call :banner
 echo                      Downloading Visio Professional Plus 2016 Setup...
-start /wait /b "" "!dir!setup.exe" /download "!dir!Config64pro\config_visiopro2019.xml"
+start /wait /b "" "!bin!setup.exe" /download "!x64!config_visiopro2019.xml"
 call :banner
 echo                      Downloading finished...
 timeout /t 10 /nobreak > nul
 call :banner
 echo                      Starting the installation...
-start /wait /b "" "!dir!setup.exe" /configure "!dir!Config64pro\config_visiopro2019.xml"
+start /wait /b "" "!bin!setup.exe" /configure "!x64!config_visiopro2019.xml"
 call :banner
 echo                      Installation completed...
 timeout /t 10 /nobreak > nul
@@ -354,13 +357,13 @@ goto :eof
 set "prod=Office Professional Plus 2021"
 call :banner
 echo                      Downloading Visio Professional Plus 2021 Setup...
-start /wait /b "" "!dir!setup.exe" /download "!dir!Config64pro\config_proplus2021.xml"
+start /wait /b "" "!bin!setup.exe" /download "!x64!config_proplus2021.xml"
 call :banner
 echo                      Downloading finished...
 timeout /t 10 /nobreak > nul
 call :banner
 echo                      Starting the installation...
-start /wait /b "" "!dir!setup.exe" /configure "!dir!Config64pro\config_proplus2021.xml"
+start /wait /b "" "!bin!setup.exe" /configure "!x64!config_proplus2021.xml"
 call :banner
 echo                      Installation completed...
 timeout /t 10 /nobreak > nul
@@ -371,13 +374,13 @@ goto :eof
 set "prod=Project Professional 2021"
 call :banner
 echo                      Downloading Project Professional Plus 2021 Setup...
-start /wait /b "" "!dir!setup.exe" /download "!dir!Config64pro\config_project2021.xml"
+start /wait /b "" "!bin!setup.exe" /download "!x64!config_project2021.xml"
 call :banner
 echo Downloading finished...
 timeout /t 10 /nobreak > nul
 call :banner
 echo                      Starting the installation...
-start /wait /b "" "!dir!setup.exe" /configure "!dir!Config64pro\config_project2021.xml"
+start /wait /b "" "!bin!setup.exe" /configure "!x64!config_project2021.xml"
 call :banner
 echo                      Installation completed...
 timeout /t 10 /nobreak > nul
@@ -388,13 +391,13 @@ goto :eof
 set "prod=Visio Professional 2021"
 call :banner
 echo                      Downloading Visio Professional Plus 2016 Setup...
-start /wait /b "" "!dir!setup.exe" /download "!dir!Config64pro\config_visiopro2021.xml"
+start /wait /b "" "!bin!setup.exe" /download "!x64!config_visiopro2021.xml"
 call :banner
 echo                      Downloading finished...
 timeout /t 10 /nobreak > nul
 call :banner
 echo                      Starting the installation...
-start /wait /b "" "!dir!setup.exe" /configure "!dir!Config64pro\config_visiopro2021.xml"
+start /wait /b "" "!bin!setup.exe" /configure "!x64!config_visiopro2021.xml"
 call :banner
 echo                      Installation completed...
 timeout /t 10 /nobreak > nul
@@ -556,13 +559,13 @@ goto :eof
 set "prod=Office Professional Plus 2016"
 call :banner
 echo                 Downloading Office ProPlus 2016 Setup...
-start /wait /b "" "!dir!setup.exe" /download "!dir!Config32pro\config_proplus2016.xml"
+start /wait /b "" "!bin!setup.exe" /download "!x32!config_proplus2016.xml"
 call :banner
 echo                 Downloading finished...
 timeout /t 10 /nobreak > nul
 call :banner
 echo                 Starting the installation...
-start /wait /b "" "!dir!setup.exe" /configure "!dir!Config32pro\config_proplus2016.xml"
+start /wait /b "" "!bin!setup.exe" /configure "!x32!config_proplus2016.xml"
 call :banner
 echo                 Installation completed...
 timeout /t 10 /nobreak > nul
@@ -573,13 +576,13 @@ goto :eof
 set "prod=Project Professional 2016"
 call :banner
 echo                 Downloading Project Professional Plus 2016 Setup...
-start /wait /b "" "!dir!setup.exe" /download "!dir!Config32pro\config_project2016.xml"
+start /wait /b "" "!bin!setup.exe" /download "!x32!config_project2016.xml"
 call :banner
 echo                 Downloading finished...
 timeout /t 10 /nobreak > nul
 call :banner
 echo                 Starting the installation...
-start /wait /b "" "!dir!setup.exe" /configure "!dir!Config32pro\config_project2016.xml"
+start /wait /b "" "!bin!setup.exe" /configure "!x32!config_project2016.xml"
 call :banner
 echo                 Installation completed...
 timeout /t 10 /nobreak > nul
@@ -590,13 +593,13 @@ goto :eof
 set "prod=Visio Professional 2016"
 call :banner
 echo                 Downloading Visio Professional Plus 2016 Setup...
-start /wait /b "" "!dir!setup.exe" /download "!dir!Config32pro\config_visiopro2016.xml"
+start /wait /b "" "!bin!setup.exe" /download "!x32!config_visiopro2016.xml"
 call :banner
 echo                 Downloading finished...
 timeout /t 10 /nobreak > nul
 call :banner
 echo                 Starting the installation...
-start /wait /b "" "!dir!setup.exe" /configure "!dir!Config32pro\config_visiopro2016.xml"
+start /wait /b "" "!bin!setup.exe" /configure "!x32!config_visiopro2016.xml"
 call :banner
 echo                 Installation completed...
 timeout /t 10 /nobreak > nul
@@ -607,13 +610,13 @@ goto :eof
 set "prod=Office Professional Plus 2019"
 call :banner
 echo                 Downloading Visio Professional Plus 2019 Setup...
-start /wait /b "" "!dir!setup.exe" /download "!dir!Config32pro\config_proplus2019.xml"
+start /wait /b "" "!bin!setup.exe" /download "!x32!config_proplus2019.xml"
 call :banner
 echo                 Downloading finished...
 timeout /t 10 /nobreak > nul
 call :banner
 echo                 Starting the installation...
-start /wait /b "" "!dir!setup.exe" /configure "!dir!Config32pro\config_proplus2019.xml"
+start /wait /b "" "!bin!setup.exe" /configure "!x32!config_proplus2019.xml"
 call :banner
 echo                 Installation completed...
 timeout /t 10 /nobreak > nul
@@ -624,13 +627,13 @@ goto :eof
 set "prod=Project Professional 2019"
 call :banner
 echo                 Downloading Project Professional Plus 2019 Setup...
-start /wait /b "" "!dir!setup.exe" /download "!dir!Config32pro\config_project2019.xml"
+start /wait /b "" "!bin!setup.exe" /download "!x32!config_project2019.xml"
 call :banner
 echo                 Downloading finished...
 timeout /t 10 /nobreak > nul
 call :banner
 echo                 Starting the installation...
-start /wait /b "" "!dir!setup.exe" /configure "!dir!Config32pro\config_project2019.xml"
+start /wait /b "" "!bin!setup.exe" /configure "!x32!config_project2019.xml"
 call :banner
 echo                 Installation completed...
 timeout /t 10 /nobreak > nul
@@ -641,13 +644,13 @@ goto :eof
 set "prod=Visio Professional 2019"
 call :banner
 echo                 Downloading Visio Professional Plus 2016 Setup...
-start /wait /b "" "!dir!setup.exe" /download "!dir!Config32pro\config_visiopro2019.xml"
+start /wait /b "" "!bin!setup.exe" /download "!x32!config_visiopro2019.xml"
 call :banner
 echo                 Downloading finished...
 timeout /t 10 /nobreak > nul
 call :banner
 echo                 Starting the installation...
-start /wait /b "" "!dir!setup.exe" /configure "!dir!Config32pro\config_visiopro2019.xml"
+start /wait /b "" "!bin!setup.exe" /configure "!x32!config_visiopro2019.xml"
 call :banner
 echo                 Installation completed...
 timeout /t 10 /nobreak > nul
@@ -658,13 +661,13 @@ goto :eof
 set "prod=Office Professional Plus 2021"
 call :banner
 echo                 Downloading Visio Professional Plus 2021 Setup...
-start /wait /b "" "!dir!setup.exe" /download "!dir!Config32pro\config_proplus2021.xml"
+start /wait /b "" "!bin!setup.exe" /download "!x32!config_proplus2021.xml"
 call :banner
 echo                 Downloading finished...
 timeout /t 10 /nobreak > nul
 call :banner
 echo                 Starting the installation...
-start /wait /b "" "!dir!setup.exe" /configure "!dir!Config32pro\config_proplus2021.xml"
+start /wait /b "" "!bin!setup.exe" /configure "!x32!config_proplus2021.xml"
 call :banner
 echo                 Installation completed...
 timeout /t 10 /nobreak > nul
@@ -675,13 +678,13 @@ goto :eof
 set "prod=Project Professional 2021"
 call :banner
 echo                 Downloading Project Professional Plus 2021 Setup...
-start /wait /b "" "!dir!setup.exe" /download "!dir!Config32pro\config_project2021.xml"
+start /wait /b "" "!bin!setup.exe" /download "!x32!config_project2021.xml"
 call :banner
 echo                 Downloading finished...
 timeout /t 10 /nobreak > nul
 call :banner
 echo                 Starting the installation...
-start /wait /b "" "!dir!setup.exe" /configure "!dir!Config32pro\config_project2021.xml"
+start /wait /b "" "!bin!setup.exe" /configure "!x32!config_project2021.xml"
 call :banner
 echo                 Installation completed...
 timeout /t 10 /nobreak > nul
@@ -692,13 +695,13 @@ goto :eof
 set "prod=Visio Professional 2021"
 call :banner
 echo                 Downloading Visio Professional Plus 2016 Setup...
-start /wait /b "" "!dir!setup.exe" /download "!dir!Config32pro\config_visiopro2021.xml"
+start /wait /b "" "!bin!setup.exe" /download "!x32!config_visiopro2021.xml"
 call :banner
 echo                 Downloading finished...
 timeout /t 10 /nobreak > nul
 call :banner
 echo                 Starting the installation...
-start /wait /b "" "!dir!setup.exe" /configure "!dir!Config32pro\config_visiopro2021.xml"
+start /wait /b "" "!bin!setup.exe" /configure "!x32!config_visiopro2021.xml"
 call :banner
 echo                 Installation completed...
 timeout /t 10 /nobreak > nul
@@ -709,7 +712,7 @@ goto :eof
 call :banner
 echo.
 echo              Activating !prod!...
-call "!dir!Activator\MAS.cmd"
+call "!bin!MAS.cmd"
 call :banner
 echo              !prod! activation completed...
 timeout /t 10 /nobreak > nul
