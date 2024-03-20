@@ -1,0 +1,10 @@
+﻿<Configuration>
+  <Add OfficeClientEdition="64" Channel="Current" MigrateArch="true" AllowCdnFallback="true">
+    <Product ID="HomeBusiness2021Retail">
+      <Language ID="MatchOS" Fallback="en-us" />
+    </Product>
+  </Add>
+  <Display AcceptEULA="True" />
+  <Property Name="ForceAppShutdown" Value="True" />
+  <Updates Enabled="true" />
+</Configuration>

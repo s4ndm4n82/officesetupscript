@@ -89,22 +89,24 @@ if defined arch goto :startsetup
 
 :startsetup
 call :banner
-echo                      [1] Office 2016.
-echo                      [2] Office 2019.
-echo                      [3] Office 2021.
-echo                      [4] Activate Office.
+echo                      [1] Office 365.
+echo                      [2] Office 2016.
+echo                      [3] Office 2019.
+echo                      [4] Office 2021.
+echo                      [5] Activate Office.
 echo           _____________________________________________
 echo                      [x] Exit the script.
 echo.
 echo ______________________________________________________________________
 echo.
-choice /C:1234x /N /M ".                      Enter your choice:"
+choice /C:12345x /N /M ".                      Enter your choice:"
 
-if /i %errorlevel% equ 1 (set "yy=2016")
-if /i %errorlevel% equ 2 (set "yy=2019")
-if /i %errorlevel% equ 3 (set "yy=2021")
-if /i %errorlevel% equ 4 (goto :activate)
-if /i %errorlevel% equ 5 (exit)
+if /i %errorlevel% equ 1 (set "yy=365")
+if /i %errorlevel% equ 2 (set "yy=2016")
+if /i %errorlevel% equ 3 (set "yy=2019")
+if /i %errorlevel% equ 4 (set "yy=2021")
+if /i %errorlevel% equ 5 (goto :activate)
+if /i %errorlevel% equ 6 (exit)
 
 if defined yy goto :setup
 
