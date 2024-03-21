@@ -7,7 +7,11 @@
 set "dir=%~dp0"
 set "bin=!dir!bin\"
 set "conf[ath="
-set "v=1.0.2"
+set "v=1.2.2"
+set "yy="
+set "mo="
+set "mp="
+set "mv="
 set "prod="
 set "prodtype="
 set "prodname="
@@ -89,54 +93,145 @@ if defined arch goto :startsetup
 
 :startsetup
 call :banner
-echo                      [1] Office 365.
-echo                      [2] Office 2016.
-echo                      [3] Office 2019.
-echo                      [4] Office 2021.
-echo                      [5] Activate Office.
+
+echo                      [1] Office 2016.
+echo                      [2] Office 2019.
+echo                      [3] Office 2021.
+echo                      [4] Microsoft 365.
+echo                      [5] Microsoft Project.
+echo                      [6] Microsoft Visio.
+echo                      [7] Activate Office.
 echo           _____________________________________________
 echo                      [x] Exit the script.
 echo.
 echo ______________________________________________________________________
 echo.
-choice /C:12345x /N /M ".                      Enter your choice:"
+choice /C:1234567x /N /M ".                      Enter your choice:"
 
-if /i %errorlevel% equ 1 (set "yy=365")
-if /i %errorlevel% equ 2 (set "yy=2016")
-if /i %errorlevel% equ 3 (set "yy=2019")
-if /i %errorlevel% equ 4 (set "yy=2021")
-if /i %errorlevel% equ 5 (goto :activate)
-if /i %errorlevel% equ 6 (exit)
+if /i %errorlevel% equ 1 (set "yy=2016")
+if /i %errorlevel% equ 2 (set "yy=2019")
+if /i %errorlevel% equ 3 (set "yy=2021")
+if /i %errorlevel% equ 4 (set "mo=365")
+if /i %errorlevel% equ 5 (set "mp=365")
+if /i %errorlevel% equ 6 (set "mv=365")
+if /i %errorlevel% equ 7 (goto :activate)
+if /i %errorlevel% equ 8 (exit)
 
-if defined yy goto :setup
+if defined yy goto :oselect
+if defined mo goto :365select
+if defined mp goto :pselect
+if defined mv goto :vselect
 
-:setup
+:365select
+set "yy=365"
 call :banner
-echo                      [1] Install Office ProPlus !arch! !yy!.
-echo                      [2] Install Office Pro !arch! !yy!.
-echo                      [3] Install Project Pro !arch! !yy!.
-echo                      [4] Install Visio Pro !arch! !yy!.
-echo                      [5] Activate Office.
+echo                      [1] Microsoft 365.
+echo                      [2] Microsoft 365 Small Business Premium.
+echo                      [3] Microsoft 365 Family ^& Personal.
+echo                      [4] Microsoft 365 Apps for Business.
+echo                      [5] Microsoft 365 Apps for Enterprise.
+echo                      [6] Activate Office.
 echo           _____________________________________________
 echo                      [x] Go to main menu.
 echo.
 echo ______________________________________________________________________
 echo.
 echo.
-choice /C:12345x /N /M ".                     Enter your choice:"
+choice /C:123456x /N /M ".                     Enter your choice:"
+
+if /i %errorlevel% equ 1 (set "prodtype=o")
+if /i %errorlevel% equ 2 (set "prodtype=osb")
+if /i %errorlevel% equ 3 (set "prodtype=ohp")
+if /i %errorlevel% equ 4 (set "prodtype=ob")
+if /i %errorlevel% equ 5 (set "prodtype=oe")
+if /i %errorlevel% equ 6 (goto :activate)
+if /i %errorlevel% equ 7 (goto :startsetup)
+if defined prodtype goto :cmdinstall
+
+:oselect
+call :banner
+echo                      [1] Office Professional Plus !arch! !yy!.
+echo                      [2] Office Professional !arch! !yy!.
+echo                      [3] Office Home and Business  !arch! !yy!.
+echo                      [4] Office Home and Student !arch! !yy!.
+echo                      [5] Office Personal !arch! !yy!.
+echo                      [6] Office Standard !arch! !yy!.
+echo                      [7] Activatse Office.
+echo           _____________________________________________
+echo                      [x] Go to main menu.
+echo.
+echo ______________________________________________________________________
+echo.
+echo.
+choice /C:1234567x /N /M ".                     Enter your choice:"
 
 if /i %errorlevel% equ 1 (set "prodtype=proplus")
-if /i %errorlevel% equ 2 (set "prodtype=pro")
-if /i %errorlevel% equ 3 (set "prodtype=project")
-if /i %errorlevel% equ 4 (set "prodtype=visiopro")
-if /i %errorlevel% equ 5 (goto :activate)
-if /i %errorlevel% equ 6 (goto :startsetup)
+if /i %errorlevel% equ 2 (set "prodtype=pr")
+if /i %errorlevel% equ 3 (set "prodtype=hb")
+if /i %errorlevel% equ 4 (set "prodtype=hs")
+if /i %errorlevel% equ 5 (set "prodtype=p")
+if /i %errorlevel% equ 6 (set "prodtype=s")
+if /i %errorlevel% equ 7 (goto :activate)
+if /i %errorlevel% equ 8 (goto :startsetup)
 
 if defined prodtype goto :cmdinstall
 
+:pselect
+call :banner
+echo                      [1] Project Professional 2016 !arch!.
+echo                      [2] Project Professional 2019 !arch!.
+echo                      [3] Project Professional 2021 !arch!.
+echo                      [4] Activate Office.
+echo           _____________________________________________
+echo                      [x] Go to main menu.
+echo.
+echo ______________________________________________________________________
+echo.
+echo.
+choice /C:1234x /N /M ".                     Enter your choice:"
+
+set "prodtype=project"
+if /i %errorlevel% equ 1 (set "yy=2016")
+if /i %errorlevel% equ 2 (set "yy=2019")
+if /i %errorlevel% equ 3 (set "yy=2021")
+if /i %errorlevel% equ 4 (goto :activate)
+if /i %errorlevel% equ 5 (goto :startsetup)
+
+if defined yy goto :cmdinstall
+
+:vselect
+call :banner
+echo                      [1] Visio Professional 2016 !arch!.
+echo                      [2] Visio Professional 2019 !arch!.
+echo                      [3] Visio Professional 2021 !arch!.
+echo                      [4] Activate Office.
+echo           _____________________________________________
+echo                      [x] Go to main menu.
+echo.
+echo ______________________________________________________________________
+echo.
+echo.
+choice /C:1234x /N /M ".                     Enter your choice:"
+
+set "prodtype=visiopro"
+if /i %errorlevel% equ 1 (set "yy=2016")
+if /i %errorlevel% equ 2 (set "yy=2019")
+if /i %errorlevel% equ 3 (set "yy=2021")
+if /i %errorlevel% equ 4 (goto :activate)
+if /i %errorlevel% equ 5 (goto :startsetup)
+
+if defined yy goto :cmdinstall
+
 :cmdinstall
+if !prodtype! EQU o set "prodname=Microsoft !yy!"
+if !prodtype! EQU osb set "prodname=Microsoft !yy! Small Business Premium"
+if !prodtype! EQU ohp set "prodname=Microsoft !yy! Family & Personal"
+if !prodtype! EQU ob set "prodname=Microsoft !yy! Apps for Business"
+if !prodtype! EQU oe set "prodname=Microsoft !yy! Apps for Enterprise"
 if !prodtype! EQU proplus set "prodname=Office Professional Plus !yy!"
 if !prodtype! EQU pro set "prodname=Office Professional !yy!"
+if !prodtype! EQU project set "prodname=Project Professional !yy!"
+if !prodtype! EQU visiopro set "prodname=Visio Professional !yy!"
 if !prodtype! EQU project set "prodname=Project Professional !yy!"
 if !prodtype! EQU visiopro set "prodname=Visio Professional !yy!"
 

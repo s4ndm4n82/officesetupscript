@@ -1,0 +1,11 @@
+﻿<Configuration>
+  <Add OfficeClientEdition="64" Channel="Current" MigrateArch="true" AllowCdnFallback="true">
+    <Product ID="Standard2019Retail">
+      <Language ID="MatchOS" Fallback="en-us" />
+      <ExcludeApp ID="Groove" />
+    </Product>
+  </Add>
+  <Display AcceptEULA="True" />
+  <Property Name="ForceAppShutdown" Value="True" />
+  <Updates Enabled="true" />
+</Configuration>

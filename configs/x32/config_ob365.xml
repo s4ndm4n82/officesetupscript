@@ -1,0 +1,12 @@
+﻿<Configuration>
+  <Add OfficeClientEdition="32" Channel="Current" MigrateArch="true" AllowCdnFallback="true">
+    <Product ID="O365BusinessRetail">
+      <Language ID="MatchOS" Fallback="en-us" />
+      <ExcludeApp ID="Groove" />
+      <ExcludeApp ID="Lync" />
+    </Product>
+  </Add>
+  <Display AcceptEULA="True" />
+  <Property Name="ForceAppShutdown" Value="True" />
+  <Updates Enabled="true" />
+</Configuration>
