@@ -98,7 +98,6 @@ if defined arch goto :startsetup
 
 :startsetup
 call :banner
-
 echo                      [1] Office 2016.
 echo                      [2] Office 2019.
 echo                      [3] Office 2021.
