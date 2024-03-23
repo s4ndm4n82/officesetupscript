@@ -14,11 +14,11 @@ oss.cmd
 ```
 #### PowerShell
 ```
-Invoke-Expression -Command "<path\of your\download\location>\File.bat"
+Invoke-Expression -Command "<path\of your\download\location>\oss.cmd"
 
 // or
 
-Start-Process -FilePath "<path\of your\download\location>\File.bat"
+Start-Process -FilePath "<path\of your\download\location>\oss.cmd"
 ```
 
 ## How To Use The Script
